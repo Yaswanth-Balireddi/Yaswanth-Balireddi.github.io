@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhL2ju5l1R5yutmGe4ah2QCYfY1W8K5OLIw&s" type="image/x-icon">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://img.freepik.com/free-vector/online-shopping-isometric-icon-internet-purchase-laptop-with-shop-basket-screen-online-payment_39422-973.jpg?t=st=1742311115~exp=1742314715~hmac=7a94f628eeba2179da2216db10769b516d2073fb581eb08855d9bb58de2eb617&w=1380'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            margin: 10px;
+            text-transform: uppercase;
+        }
+
+        .header {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+
+        .header p {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .profile-img {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShYwM33sSN7MtnLIq0k1qjhpoEtSstLE26gA&s'); /* Replace with your profile image URL */
+            background-size: cover;
+            background-position: center;
+            border: 5px solid white;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden; /* Hide by default */
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            font-size: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #00aaff;
+        }
+
+        .content {
+            display: none;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .btn {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color:red;
+        }
+
+        .follow-button {
+            margin-top: 30px;
+            background-color: #ff5733;
+            font-weight: bold;
+            padding: 15px 30px;
+        }
+
+        .follow-button:hover {
+            background-color: #c4411c;
+        }
+
+        .hire-me-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff5733;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hire-me-button:hover {
+            background-color: #c4411c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="javascript:void(0);" class="btn" onclick="showContent('about')">About Me</a>
+        <a href="javascript:void(0);" class="btn" onclick="showContent('projects')">Projects</a>
+        <a href="javascript:void(0);" class="btn" onclick="showContent('skills')">Skills</a>
+        <a href="javascript:void(0);" class="btn" onclick="showContent('contact')">Contact Me</a>
+    </div>
+
+    <!-- Profile Image -->
+    <div class="profile-img"></div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>My Portfolio</h1>
+        <br>
+        <p style="color:whitesmoke;">BALIREDDI YASWANTH</p>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="content" id="about" style="background-color: transparent;border-radius: 20px;">
+        <h2>About Me</h2>
+        <p>Passionate and dedicated, I bring creativity and commitment to every project I undertake.</p><p> 
+            With a focus on excellence, I thrive on solving challenges, fostering innovation, and delivering impactful results.
+        </p><p>I am driven by a desire to learn, grow, and make a meaningful contribution in my field.</p>
+    </div>
+
+    <div class="content" id="projects" style=" background-color: transparent;border-radius: 20px;">
+        <h2>Projects</h2>
+        <p>sasi id card</p>
+        <p>sasi vission mission</p>
+        <p>Personal Portfolio Website</p>
+    </div>
+
+    <div class="content" id="skills" style="background-color: transparent; border-radius: 20px;">
+        <h2>Skills</h2>
+        <p>Java</p>
+        <p>Python</p>
+        <p>JavaScript</p>
+        <p>React</p>
+        <p>Node.js</p>
+        <p>SQL</p>
+        <p>Git & GitHub</p>
+    </div>
+
+    <div class="content" id="contact" style="background-color: transparent; border-radius: 20px;">
+        <h2>Contact Me</h2>
+        <p style="color: aliceblue;">Email:yaswanth.balireddi@sasi.ac.in</p>
+        <p>Phone: *******733</p>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- Hire Me Button -->
+    <button class="hire-me-button" onclick="window.location.href='mailto:balaganesh.damma@sasi.ac.in'">Hire Me</button>
+
+    <script>
+        function showContent(section) {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+            document.getElementById(section).style.display = 'block';
+
+            // Show social media icons only when "Contact Me" is clicked
+            if (section === 'contact') {
+                document.querySelector('.social-icons').style.visibility = 'visible';
+            } else {
+                document.querySelector('.social-icons').style.visibility = 'hidden';
+            }
+        }
+
+        // Initially hide all content
+        document.addEventListener('DOMContentLoaded', function() {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
