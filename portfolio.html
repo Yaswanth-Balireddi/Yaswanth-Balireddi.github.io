@@ -3,233 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhL2ju5l1R5yutmGe4ah2QCYfY1W8K5OLIw&s" type="image/x-icon">
-
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url('https://img.freepik.com/free-vector/online-shopping-isometric-icon-internet-purchase-laptop-with-shop-basket-screen-online-payment_39422-973.jpg?t=st=1742311115~exp=1742314715~hmac=7a94f628eeba2179da2216db10769b516d2073fb581eb08855d9bb58de2eb617&w=1380'); /* Replace with your background image */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .navbar {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            margin: 10px;
-            text-transform: uppercase;
-        }
-
-        .header {
-            position: absolute;
-            top: 20%;
-            left: 5%;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 60px;
-            margin: 0;
-        }
-
-        .header p {
-            font-weight: bold;
-            font-size: 30px;
-        }
-
-        .profile-img {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShYwM33sSN7MtnLIq0k1qjhpoEtSstLE26gA&s'); /* Replace with your profile image URL */
-            background-size: cover;
-            background-position: center;
-            border: 5px solid white;
-        }
-
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            visibility: hidden; /* Hide by default */
-        }
-
-        .social-icons a {
-            text-decoration: none;
-            color: white;
-            margin: 0 10px;
-            font-size: 30px;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #00aaff;
-        }
-
-        .content {
-            display: none;
-            margin-top: 60px;
-            text-align: center;
-        }
-
-        .btn {
-            margin: 10px;
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: transparent;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color:red;
-        }
-
-        .follow-button {
-            margin-top: 30px;
-            background-color: #ff5733;
-            font-weight: bold;
-            padding: 15px 30px;
-        }
-
-        .follow-button:hover {
-            background-color: #c4411c;
-        }
-
-        .hire-me-button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ff5733;
-            color: white;
-            padding: 15px 30px;
-            font-size: 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .hire-me-button:hover {
-            background-color: #c4411c;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: black; color: white; text-align: center; transition: 0.3s; }
+        .light-mode { background-color: white; color: black; }
+        nav { width: 100%; height: 10vh; position: fixed; top: 0; left: 0; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: rgba(0, 0, 0, 0.8); z-index: 1000; }
+        .light-mode nav { background: rgba(255, 255, 255, 0.8); color: black; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: inherit; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
+        .nav-links a:hover { color: #28a745; }
+        .theme-toggle { font-size: 1.5rem; cursor: pointer; }
+        .container { padding: 100px 20px; display: none; }
+        .active { display: block; }
+        .home-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .home-text { max-width: 500px; text-align: left; }
+        .home-image img { width: 300px; height: 300px; border-radius: 50%; transition: 0.3s; }
+        .home-image:hover img { transform: scale(1.1); box-shadow: 0px 0px 20px 5px rgba(33, 20, 215, 0.8); }
+        ul { list-style: none; padding: 0; }
+        .buttons { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
+        .buttons a { text-decoration: none; padding: 15px; border-radius: 50%; font-weight: bold; transition: 0.3s; display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; }
+        .linkedin { background: #0077b5; color: white; }
+        .github { background: #333; color: white; }
+        .instagram { background: #E1306C; color: white; }
+        .facebook { background: #1877F2; color: white; }
+        .buttons a:hover { opacity: 0.8; transform: scale(1.1); }
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <a href="javascript:void(0);" class="btn" onclick="showContent('about')">About Me</a>
-        <a href="javascript:void(0);" class="btn" onclick="showContent('projects')">Projects</a>
-        <a href="javascript:void(0);" class="btn" onclick="showContent('skills')">Skills</a>
-        <a href="javascript:void(0);" class="btn" onclick="showContent('contact')">Contact Me</a>
-    </div>
-
-    <!-- Profile Image -->
-    <div class="profile-img"></div>
-
-    <!-- Header -->
-    <div class="header">
-        <h1>My Portfolio</h1>
-        <br>
-        <p style="color:whitesmoke;">BALIREDDI YASWANTH</p>
-    </div>
-
-    <!-- Content Sections -->
-    <div class="content" id="about" style="background-color: transparent;border-radius: 20px;">
-        <h2>About Me</h2>
-        <p>Passionate and dedicated, I bring creativity and commitment to every project I undertake.</p><p> 
-            With a focus on excellence, I thrive on solving challenges, fostering innovation, and delivering impactful results.
-        </p><p>I am driven by a desire to learn, grow, and make a meaningful contribution in my field.</p>
-    </div>
-
-    <div class="content" id="projects" style=" background-color: transparent;border-radius: 20px;">
-        <h2>Projects</h2>
-        <p>sasi id card</p>
-        <p>sasi vission mission</p>
-        <p>Personal Portfolio Website</p>
-    </div>
-
-    <div class="content" id="skills" style="background-color: transparent; border-radius: 20px;">
-        <h2>Skills</h2>
-        <p>Java</p>
-        <p>Python</p>
-        <p>JavaScript</p>
-        <p>React</p>
-        <p>Node.js</p>
-        <p>SQL</p>
-        <p>Git & GitHub</p>
-    </div>
-
-    <div class="content" id="contact" style="background-color: transparent; border-radius: 20px;">
-        <h2>Contact Me</h2>
-        <p style="color: aliceblue;">Email:yaswanth.balireddi@sasi.ac.in</p>
-        <p>Phone: *******733</p>
-
-        <div class="social-icons">
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <nav>
+        <div class="logo">Portfolio</div>
+        <div class="nav-links">
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About</a>
+            <a href="#" onclick="showSection('skills')">Skills</a>
+            <a href="#" onclick="showSection('projects')">Projects</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
         </div>
-    </div>
+        <i class="fas fa-lightbulb theme-toggle" onclick="toggleTheme()"></i>
+    </nav>
 
-    <!-- Hire Me Button -->
-    <button class="hire-me-button" onclick="window.location.href='mailto:balaganesh.damma@sasi.ac.in'">Hire Me</button>
+    <!-- Home Section -->
+    <section id="home" class="container active">
+        <div class="home-container">
+            <div class="home-image">
+                <img src="https://thumbs.dreamstime.com/b/illustration-woman-flat-design-style-profile-icon-304913030.jpg" alt="Profile Picture">
+            </div>
+            <div class="home-text">
+                <h1>Hi, I'm Ganesh</h1>
+                <p>A passionate web developer skilled in front-end and back-end technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I am a dedicated web developer with a passion for creating stunning, user-friendly websites.</p>
+        <p>Skilled in HTML, CSS, JavaScript, React, and backend technologies.</p>
+        <p>Constantly learning and improving to build better applications.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Problem Solving</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <ul>
+            <li>Health Tracker</li>
+            <li>Online Resume</li>
+            <li>Personal Portfolio Website</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <p>Email: balaganesh@sasi.ac.in</p>
+        <p>Phone: **********</p>
+        <div class="buttons">
+            <a href="https://www.linkedin.com" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com" class="github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </section>
 
     <script>
-        function showContent(section) {
-            var contents = document.querySelectorAll('.content');
-            contents.forEach(function(content) {
-                content.style.display = 'none';
-            });
-            document.getElementById(section).style.display = 'block';
-
-            // Show social media icons only when "Contact Me" is clicked
-            if (section === 'contact') {
-                document.querySelector('.social-icons').style.visibility = 'visible';
-            } else {
-                document.querySelector('.social-icons').style.visibility = 'hidden';
-            }
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            document.querySelector('nav').classList.toggle('light-mode');
         }
 
-        // Initially hide all content
-        document.addEventListener('DOMContentLoaded', function() {
-            var contents = document.querySelectorAll('.content');
-            contents.forEach(function(content) {
-                content.style.display = 'none';
+        function showSection(sectionId) {
+            document.querySelectorAll('.container').forEach(section => {
+                section.classList.remove('active');
             });
-        });
+            document.getElementById(sectionId).classList.add('active');
+        }
     </script>
 </body>
 </html>
