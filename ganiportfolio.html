@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: black; color: white; text-align: center; transition: 0.3s; }
+        .light-mode { background-color: white; color: black; }
+        nav { width: 100%; height: 10vh; position: fixed; top: 0; left: 0; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: rgba(0, 0, 0, 0.8); z-index: 1000; }
+        .light-mode nav { background: rgba(255, 255, 255, 0.8); color: black; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: inherit; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
+        .nav-links a:hover { color: #28a745; }
+        .theme-toggle { font-size: 1.5rem; cursor: pointer; }
+        .container { padding: 100px 20px; display: none; }
+        .active { display: block; }
+        .home-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .home-text { max-width: 500px; text-align: left; }
+        .home-image img { width: 300px; height: 300px; border-radius: 50%; transition: 0.3s; }
+        .home-image:hover img { transform: scale(1.1); box-shadow: 0px 0px 20px 5px rgba(33, 20, 215, 0.8); }
+        ul { list-style: none; padding: 0; }
+        .buttons { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
+        .buttons a { text-decoration: none; padding: 15px; border-radius: 50%; font-weight: bold; transition: 0.3s; display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; }
+        .linkedin { background: #0077b5; color: white; }
+        .github { background: #333; color: white; }
+        .instagram { background: #E1306C; color: white; }
+        .facebook { background: #1877F2; color: white; }
+        .buttons a:hover { opacity: 0.8; transform: scale(1.1); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Portfolio</div>
+        <div class="nav-links">
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About</a>
+            <a href="#" onclick="showSection('skills')">Skills</a>
+            <a href="#" onclick="showSection('projects')">Projects</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+        </div>
+        <i class="fas fa-lightbulb theme-toggle" onclick="toggleTheme()"></i>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="container active">
+        <div class="home-container">
+            <div class="home-image">
+                <img src="https://thumbs.dreamstime.com/b/illustration-woman-flat-design-style-profile-icon-304913030.jpg" alt="Profile Picture">
+            </div>
+            <div class="home-text">
+                <h1>Hi, I'm Ganesh</h1>
+                <p>A passionate web developer skilled in front-end and back-end technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I am a dedicated web developer with a passion for creating stunning, user-friendly websites.</p>
+        <p>Skilled in HTML, CSS, JavaScript, React, and backend technologies.</p>
+        <p>Constantly learning and improving to build better applications.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Problem Solving</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <ul>
+            <li>Health Tracker</li>
+            <li>Online Resume</li>
+            <li>Personal Portfolio Website</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <p>Email: balaganesh@sasi.ac.in</p>
+        <p>Phone: **********</p>
+        <div class="buttons">
+            <a href="https://www.linkedin.com" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com" class="github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </section>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            document.querySelector('nav').classList.toggle('light-mode');
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.container').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
